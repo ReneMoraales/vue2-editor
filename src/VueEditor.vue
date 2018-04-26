@@ -66,7 +66,7 @@ export default {
 
   watch: {
     value (val) {
-      if (val !=  this.editor.innerHTML && !this.quill.hasFocus()) {
+      if (val !=  this.editor.innerHTML) {
         this.editor.innerHTML = val
       }
     },
