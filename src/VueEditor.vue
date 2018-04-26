@@ -154,6 +154,7 @@ export default {
       this.quill.on('text-change', (delta, oldContents, source) => {
         let editorContent = this.editor.innerHTML
         if ( editorContent === '<p><br></p>' ) editorContent = ''
+        if ( source === 'user' ) this.$emit('input', editorContent)
       })
     },
 
