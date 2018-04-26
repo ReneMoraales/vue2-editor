@@ -151,10 +151,9 @@ export default {
     },
 
     handleUpdatedEditor() {
-      this.quill.on('text-change', () => {
+      this.quill.on('text-change', (delta, oldContents, source) => {
         let editorContent = this.editor.innerHTML
         if ( editorContent === '<p><br></p>' ) editorContent = ''
-        this.$emit('input', editorContent)
       })
     },
 
